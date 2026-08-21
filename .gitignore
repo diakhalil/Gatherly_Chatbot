@@ -45,6 +45,10 @@ services/classifier/__pycache__/
 services/classifier/*.pyc
 services/classifier/models/
 
+# large output files
+services/agent-a/exports/
+services/agent-b/output/
+
 #  from services/voice-demo/.gitignore 
 services/voice-demo/.venv/
 services/voice-demo/__pycache__/

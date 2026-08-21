@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Voice demo</title>
+  <style>
+    body { font-family: sans-serif; max-width: 40rem; margin: 3rem auto; }
+    button { font-size: 1.1rem; padding: 0.6rem 1.2rem; margin-right: 0.4rem; }
+    section { margin-bottom: 2rem; }
+    #status { color: #555; margin-top: 1rem; }
+    #transcript, textarea {
+      margin-top: 1rem; padding: 1rem; background: #f4f4f4;
+      min-height: 3rem; width: 100%; box-sizing: border-box;
+    }
+    textarea { min-height: 5rem; font: inherit; }
+  </style>
+</head>
+<body>
+  <h1>Voice demo</h1>
+
+  <section>
+    <h2>1. Speech to text</h2>
+    <button id="toggle">Start recording</button>
+    <p id="status">Ready</p>
+    <div id="transcript"></div>
+  </section>
+
+  <section>
+    <h2>2. Text to speech</h2>
+    <textarea id="tts-text" placeholder="Type something to speak"></textarea>
+    <button id="speak">Speak</button>
+  </section>
+
+  <script>
+    const toggle = document.getElementById("toggle");
+    const status = document.getElementById("status");
+    const transcript = document.getElementById("transcript");
+    const ttsText = document.getElementById("tts-text");
+    const speakBtn = document.getElementById("speak");
+
+    let recorder = null;
+    let chunks = [];
+    let recording = false;
+
+    async function playSpeech(text) {
+      const response = await fetch("/speak", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+      if (!response.ok) {
+        alert("TTS failed");
+        return;
+      }
+      const blob = await response.blob();
+      const audio = new Audio(URL.createObjectURL(blob));
+      await audio.play();
+    }
+
+    toggle.onclick = async () => {
+      if (!recording) {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        chunks = [];
+        recorder = new MediaRecorder(stream);
+        recorder.ondataavailable = (event) => {
+          if (event.data.size > 0) chunks.push(event.data);
+        };
+        recorder.start();
+        recording = true;
+        toggle.textContent = "Stop recording";
+        status.textContent = "Listening…";
+        return;
+      }
+
+      recorder.stop();
+      recorder.stream.getTracks().forEach((track) => track.stop());
+      recording = false;
+      toggle.textContent = "Start recording";
+      status.textContent = "Transcribing…";
+
+      recorder.onstop = async () => {
+        const blob = new Blob(chunks, { type: recorder.mimeType || "audio/webm" });
+        const form = new FormData();
+        form.append("audio", blob, "speech.webm");
+
+        const response = await fetch("/transcribe", { method: "POST", body: form });
+        const data = await response.json();
+        const text = data.text || "(no speech detected)";
+        transcript.textContent = text;
+        ttsText.value = text;
+        status.textContent = "Done";
+      };
+    };
+
+    speakBtn.onclick = async () => {
+      const text = ttsText.value.trim();
+      if (!text) {
+        alert("Type something first");
+        return;
+      }
+      speakBtn.disabled = true;
+      try {
+        await playSpeech(text);
+      } finally {
+        speakBtn.disabled = false;
+      }
+    };
+  </script>
+</body>
+</html>

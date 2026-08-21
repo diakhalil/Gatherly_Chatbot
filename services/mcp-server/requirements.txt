@@ -1,0 +1,4 @@
+# MCP HTTP server + weather/route tools
+fastmcp
+python-dotenv==1.2.2
+httpx

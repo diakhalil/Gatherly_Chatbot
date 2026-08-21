@@ -1,0 +1,150 @@
+text,label
+"We ran out of XL shirts at check-in and two hosts had to wear their own clothes.",clothing
+"Black blazers never arrived from inventory so the welcome team looked mismatched.",clothing
+"Host size M was recorded wrong; we only had S left on the rack.",clothing
+"No formal dresses for the female hosts even though requestDress was set.",clothing
+"The agency shirts were wrinkled and the wrong color for a black-tie wedding.",clothing
+"We did not have enough vests for the bartending hosts.",clothing
+"Outfit bags were missing name tags so people grabbed the wrong size.",clothing
+"Client asked for all-white staff and we only had mixed inventory.",clothing
+"Two hosts refused the provided shoes because they were the wrong size.",clothing
+"Clothing crate for event 8 never left the warehouse.",clothing
+"The XL and L piles were empty by 6pm while S sat unused.",clothing
+"Uniform jackets were still at the previous venue.",clothing
+"We had shirts but no matching trousers for the outdoor cocktail.",clothing
+"A host with clothingSize XL was given a medium blazer and could not button it.",clothing
+"Ironing kit was missing so every outfit looked unprofessional on camera.",clothing
+"The dress code was black tie and we sent polo shirts.",clothing
+"Spare ties and pocket squares were not packed with the clothing box.",clothing
+"One host is hijabi and we had no matching modest uniform option.",clothing
+"Returned clothes from last week were stained and still issued today.",clothing
+"Inventory said 12 black shirts; we opened the box and found 4.",clothing
+"Check-in looked messy because half the team had no event lanyards or branded shirts.",clothing
+"The tailor alteration for three jackets was not done before doors opened.",clothing
+"Female hosts were given men's cuts and spent 20 minutes swapping.",clothing
+"We should not accept more hosts in size XL until stock is replenished.",clothing
+"Client complained specifically about staff appearance, not about the venue.",clothing
+"The van never showed up for the three hosts who marked needsRide.",transport
+"Pickup from Dora was promised at 4:30 and nobody came.",transport
+"Driver went to the wrong hotel so four hosts arrived after guest doors opened.",transport
+"Parking at the venue was full and we had no overflow plan for host cars.",transport
+"The minibus seated 8 but 11 hosts needed a ride.",transport
+"No return trip was booked; hosts were stranded after teardown.",transport
+"Uber costs blew up because Gatherly transport was cancelled last minute.",transport
+"The assigned van waited at gate 1 while the meeting point was gate 3.",transport
+"Host with needsRide=1 got no SMS with the driver number.",transport
+"Traffic from Beirut was expected but we did not stagger pickups.",transport
+"One car broke down on the highway with three hosts and no backup vehicle.",transport
+"Valet refused staff cars and we had nowhere to leave the shuttle.",transport
+"The transportation row in the event was empty even though six people needed a ride.",transport
+"Drop-off was on the highway side of the venue; hosts walked 15 minutes in uniform.",transport
+"Night pickup after 1am was not scheduled though the event ended at 12:30.",transport
+"Two different drivers claimed the same route and neither took our hosts.",transport
+"Byblos mountain road was closed and the shuttle had no alternate route.",transport
+"We told hosts to come by taxi then refused to reimburse them.",transport
+"The bus arrived on time but the guest list check delayed departure 40 minutes.",transport
+"Shared ride mixed two events and people got off at the wrong wedding.",transport
+"No parking passes were printed for the team leader car.",transport
+"Ferry timing for the island venue was missed; whole team was late.",transport
+"needsRide hosts were told to meet at Sassine and the pin was wrong.",transport
+"Return shuttle left early and left the bar team behind.",transport
+"I would not flag clothing or weather; the only failure was getting people on site.",transport
+"Only four hosts showed for 120 guests; check-in collapsed.",staffing
+"The assigned team leader did not come and nobody took over.",staffing
+"We were short two bilingual hosts; Arabic-speaking guests waited too long.",staffing
+"Three accepted hosts no-showed without calling.",staffing
+"Door team had one person; the line reached the parking lot.",staffing
+"Nobody on the crew had bartending skills though the client paid for a bar.",staffing
+"We accepted too few hosts relative to nbOfGuests.",staffing
+"Shift overlap was wrong so 8-10pm had almost no staff.",staffing
+"A host left at 9 for an exam and we had no replacement.",staffing
+"New hosts did not know the floor plan and kept asking guests for directions.",staffing
+"No one was assigned to VIP greeting even though requestedRole needed it.",staffing
+"Language mix was French-only; the family spoke Arabic.",staffing
+"Breaks were not staggered; five people disappeared at once.",staffing
+"We needed a second team leader for a split indoor/outdoor layout.",staffing
+"Applications looked fine on paper but half the team had never done a wedding.",staffing
+"Check-in iPad person was also doing coats; both queues failed.",staffing
+"Rejected two strong hosts last week and felt it tonight.",staffing
+"The roster still listed a blocked host who cannot work.",staffing
+"Guest count jumped to 180 and we did not add hosts.",staffing
+"Night crew was not hired; teardown was just me and one intern.",staffing
+"Call-time was 4pm but most hosts were told 6pm.",staffing
+"No runner between kitchen and hall; waiters were pulled off doors.",staffing
+"Staffing was the problem, not the building and not the weather.",staffing
+"We should not run another 100+ guest event with under 8 hosts.",staffing
+"The ballroom capacity is 80 and we seated 110; fire warden was unhappy.",venue
+"No wheelchair ramp; two guests could not reach the terrace.",venue
+"AC died at 7pm and the hall became unusable.",venue
+"Stage blocked the emergency exit.",venue
+"Restrooms were one floor down with no signage.",venue
+"Garden layout had no backup indoor space when the client wanted one.",venue
+"Kitchen is too far from the hall; food arrived cold. That's a venue flow issue.",venue
+"Sound from the neighboring hall bled into our ceremony.",venue
+"Ceiling is too low for the lighting rig the client expected.",venue
+"Loading dock was locked so we carried crates through the lobby.",venue
+"The Pearl Ballroom floor is slippery; two guests fell.",venue
+"No staff room; hosts changed in the bathroom.",venue
+"Wi-Fi dropped so our check-in tablets failed — venue infrastructure.",venue
+"Outdoor generator was not provided though the contract listed it.",venue
+"Tables were a different size than the floor plan we were given.",venue
+"The venue banned extra lighting 30 minutes before doors.",venue
+"Parking structure elevator was out; elderly guests struggled. Venue side.",venue
+"Bridal suite smelled of paint from renovations.",venue
+"We could not fit the buffet and the dance floor in this room.",venue
+"Accessibility toilet was used as storage.",venue
+"The indoor map we published did not match the real corridors.",venue
+"Capacity on the listing was wrong; this space is smaller than advertised.",venue
+"Rain was fine; the problem was there is no covered walkway from valet.",venue
+"Client loved the staff. The venue itself was the weak point.",venue
+"Doors to the terrace slam in any breeze; not a weather call, it's the building.",venue
+"It rained hard at 4pm with no tent over the garden ceremony.",weather
+"Forecast said storms and we still kept the full program outdoors.",weather
+"Extreme heat; several guests felt unwell in the uncovered courtyard.",weather
+"Wind knocked over the welcome sign and flower walls.",weather
+"Humidity ruined the outdoor dessert display.",weather
+"Sudden hail forced everyone inside a room that was not prepared.",weather
+"Sunset glare on the terrace made the speeches impossible without moving.",weather
+"We ignored the weather tool warning for Byblos coastal wind.",weather
+"Rain started during cocktail and we had no umbrellas or side rooms ready.",weather
+"Cold drop at night; outdoor bar team had no heaters.",weather
+"Dust storm made the garden unusable for photos.",weather
+"Weather flipped from sun to rain in 20 minutes; no plan B.",weather
+"Outdoor heaters were requested because of the forecast and never arrived. Still a weather ops miss.",weather
+"The event was beachfront and tide came higher than expected.",weather
+"Lightning delay lasted an hour; we had no indoor activity.",weather
+"Morning dew soaked the ceremony chairs; nobody checked overnight weather.",weather
+"Client wanted lawn games in August midday heat. We should have moved them.",weather
+"Rain was light but the uncovered cable runs became a safety issue.",weather
+"Weather, not staffing, caused the delay. Plenty of hosts were standing by.",weather
+"We needed a covered backup from the start for this open-air villa.",weather
+"Humidity and no airflow outdoors fogged the cameras and guest glasses.",weather
+"A weather alert went out at noon and nobody updated the run of show.",weather
+"The only serious risk tonight was the storm cell, not clothes or vans.",weather
+"Guests left early because it was too cold on the roof.",weather
+"Next time this venue is outdoor-only, weather readiness has to pass first.",weather
+"Check-in was smooth, outfits fit, vans were on time, client thanked the team.",all_clear
+"No issues to escalate. Staffing matched the guest count and the hall worked.",all_clear
+"Weather stayed clear and we did not need the tent. Good event.",all_clear
+"Clothing, transport, and venue all fine. I would run this playbook again.",all_clear
+"Hosts arrived together, uniforms correct, no shortages.",all_clear
+"A small spill was cleaned quickly; nothing operational failed.",all_clear
+"Client was happy with greeting, timing, and appearance.",all_clear
+"Team leader briefing was accurate; everyone knew their door.",all_clear
+"Ride list was short and the driver hit every pickup.",all_clear
+"Inventory matched the names on the clothing sheet.",all_clear
+"Indoor ballroom, mild night, no weather exposure. All good.",all_clear
+"We had one extra host which actually helped. No shortage.",all_clear
+"Debrief is positive. Do not open a clothing or transport ticket.",all_clear
+"Guests commented on how organized check-in felt.",all_clear
+"Teardown finished on time and the venue signed off.",all_clear
+"No no-shows. Full accepted roster present.",all_clear
+"Plan B was not needed. Keep the same vendor set.",all_clear
+"Communication with the client was clear all night.",all_clear
+"I rated this 5 stars. Operations held.",all_clear
+"Minor radio glitch for two minutes, then fine. Not an ops failure.",all_clear
+"This is the standard we want: enough people, right clothes, on time.",all_clear
+"Nothing about rain, vans, or shirts went wrong.",all_clear
+"Ready to mark this event closed with no follow-up tasks.",all_clear
+"Family asked to book us again. No internal issues to log.",all_clear
+"All_clear from my side as team leader. Great crew.",all_clear

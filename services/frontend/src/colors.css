@@ -1,0 +1,17 @@
+:root {
+  
+  
+  /* Warm tones */
+  --color-warm-beige: #FEF9F4;
+  --color-cream: #F7EEE7;
+  --color-blush: #D3B8AE;
+  --color-rose: #A26769;
+  
+  /* Cool tones */
+  --color-mint: #383B47;
+  --color-sage: #1E1F25;
+  --color-pearl: #CFC3BE;
+  --color-mist: #F1E4DC;
+  --color-sky: #FBF3EE;
+  --color-ocean: #7E4B4F;
+}

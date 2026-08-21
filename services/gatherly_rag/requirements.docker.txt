@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+numpy
+pandas
+scikit-learn
+pillow
+python-dotenv
+pydantic
+httpx
+openai
+ollama
+sentence-transformers
+qdrant_client
+python-multipart
+ftfy
+google-genai

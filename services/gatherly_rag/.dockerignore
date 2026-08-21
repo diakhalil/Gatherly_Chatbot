@@ -1,0 +1,13 @@
+.venv
+venv
+__pycache__
+.git
+.gitignore
+.cursor
+.codex
+data
+notebooks
+tmp
+tmp_*
+foodi-ml
+*.ipynb

@@ -56,7 +56,7 @@ cd services/backend && npm start
 cd services/frontend && npm start
 ```
 
-RAG and Agent B are optional unless you need document Q&A or invitation sites.
+RAG, Agent B, voice and classifier are optional unless you need document Q&A or invitation sites.
 
 ## Docs
 

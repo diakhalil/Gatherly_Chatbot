@@ -34,6 +34,8 @@ yarn-error.log*
 
 #  from services/agent-a/.gitignore
 services/agent-a/.env
+services/agent-a/evaluation/*
+!services/agent-a/evaluation/results/agent_eval_results.json
 
 # from services/frontend/.gitignore 
 services/frontend/node_modules/
@@ -77,3 +79,4 @@ services/gatherly_rag/data/rag/evaluations/*
 logs/*.log
 
 .github/
+

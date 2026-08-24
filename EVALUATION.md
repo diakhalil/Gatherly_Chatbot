@@ -37,13 +37,13 @@ Result file: `services/gatherly_rag/data/rag/evaluations/final_retrieval_results
 All 61 questions were answered by `gemini-3.5-flash` and judged by `gemini-3.6-flash` on a 1–4 rubric.
 
 | Group | Cases | Faithfulness | Correctness | Relevance |
-|---|---:|---:|---:|---:|---:|
+|---|---:|---:|---:|---:|
 | Overall | 61 | **3.77/4 (94.3%)** | **3.57/4 (89.3%)** | **3.90/4 (97.5%)** |
 | Text | 51 | 3.94/4 | 3.63/4 | 3.88/4 |
-| Visual | 10  | 2.90/4 | 3.30/4 | 4.00/4 |
-| Cross-language | 6| 4.00/4 | 3.17/4 | 3.67/4 |
+| Visual | 10 | 2.90/4 | 3.30/4 | 4.00/4 |
+| Cross-language | 6 | 4.00/4 | 3.17/4 | 3.67/4 |
 
-Answers stay close to the retrieved context and to the question. Correctness is the weakest judge score, mainly from incomplete coverage of the gold answer rather than hallucination. Visual questions are the weak split: modality routing is 70% and faithfulness drops to 2.90, while text questions are nearly always routed correctly and stay faithful.
+Answers stay close to the retrieved context and to the question.
 
 | Language | Cases | Faithfulness | Correctness | Relevance |
 |---|---:|---:|---:|---:|

@@ -24,6 +24,69 @@ A LangGraph supervisor analyzes each request and routes it to the appropriate sp
 - Voice interface powered by Whisper
 - Role-based authentication and event-management workflows
 
+## Evaluation Results
+
+The system was evaluated using saved retrieval, generation, routing, and guardrail test cases.
+
+| Area | Metric | Result |
+|---|---|---:|
+| Text retrieval | Recall@5 | **94.9%** |
+| Text retrieval | MRR@5 | **83.2%** |
+| Text retrieval | Document Recall@5 | **100%** |
+| Image retrieval | Recall@1 | **91.7%** |
+| Generation | Faithfulness | **94.3%** |
+| Generation | Correctness | **89.3%** |
+| Generation | Relevance | **97.5%** |
+| Agent routing | Routing accuracy | **93.3%** |
+| Agent evaluation | Passed cases | **37/39 (94.9%)** |
+
+Text retrieval was evaluated on 175 questions, image retrieval on 108 questions, and answer generation on 61 questions across English, Arabic, and French.
+
+Detailed methodology and results are available in [`EVALUATION.md`](EVALUATION.md).
+
+## Architecture
+
+```mermaid
+%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#ffffff", "primaryTextColor": "#111827", "primaryBorderColor": "#111827", "lineColor": "#374151", "secondaryColor": "#ffffff", "tertiaryColor": "#ffffff", "clusterBkg": "#ffffff", "clusterBorder": "#111827"}}}%%
+flowchart TB
+    USER([User]) --> APP[React App] --> API[Express API]
+    API --> INPUT
+
+    subgraph A[Agent A - LangGraph]
+        direction TB
+        INPUT[Input Guard] --> SUP[Supervisor Agent]
+
+        SUP --> OPERATIONS[Operations Agents<br/><br/>SQL Agent<br/>Event Readiness Agent<br/>Event Debrief Agent<br/>Host Event Briefing Agent<br/>Client Event Explorer Agent]
+        SUP --> KNOWLEDGE[Knowledge Agents<br/><br/>RAG Agent<br/>Visual Style Agent<br/>Event Ops Workbook Agent]
+        SUP --> GENERAL[General Agent]
+        SUP --> INVITE[Invitation Site Agent]
+
+        OPERATIONS --> RESULT[Specialist Result]
+        KNOWLEDGE --> RESULT
+        GENERAL --> RESULT
+        INVITE --> RESULT
+        RESULT --> OUTPUT[Output Guard]
+    end
+
+    OUTPUT --> API
+    INVITE --> ADK
+
+    subgraph B[Agent B - Invitation Generator]
+        direction TB
+        ADK[Google ADK Agent] --> SITE[Generate React and Vite Site]
+        SITE --> BUILD[Build and Validate]
+        BUILD --> DEPLOY[Optional Netlify Deployment]
+    end
+
+    classDef box fill:#ffffff,stroke:#111827,color:#111827,stroke-width:1.5px;
+    class USER,APP,API,INPUT,SUP,OPERATIONS,KNOWLEDGE,GENERAL,INVITE,RESULT,OUTPUT,ADK,SITE,BUILD,DEPLOY box;
+    style A fill:#ffffff,stroke:#111827,stroke-width:2px,color:#111827;
+    style B fill:#ffffff,stroke:#111827,stroke-width:2px,color:#111827;
+```
+
+Agent A validates and routes each request to the appropriate specialist. Only the Invitation Site Agent delegates to Agent B, which generates, builds, and optionally deploys the invitation website.
+
+
 ## AI & Machine Learning Components
 
 ### Multimodal RAG
@@ -118,68 +181,6 @@ The Invitation Site Agent in Agent A delegates the request to Agent B, which gen
 - **General Agent:** Handles greetings and general questions that do not require Gatherly data or a specialist workflow.
 - **Input and Output Guards:** Block unsafe requests and validate responses before they are returned to the user.
 
-
-## Evaluation Results
-
-The system was evaluated using saved retrieval, generation, routing, and guardrail test cases.
-
-| Area | Metric | Result |
-|---|---|---:|
-| Text retrieval | Recall@5 | **94.9%** |
-| Text retrieval | MRR@5 | **83.2%** |
-| Text retrieval | Document Recall@5 | **100%** |
-| Image retrieval | Recall@1 | **91.7%** |
-| Generation | Faithfulness | **94.3%** |
-| Generation | Correctness | **89.3%** |
-| Generation | Relevance | **97.5%** |
-| Agent routing | Routing accuracy | **93.3%** |
-| Agent evaluation | Passed cases | **37/39 (94.9%)** |
-
-Text retrieval was evaluated on 175 questions, image retrieval on 108 questions, and answer generation on 61 questions across English, Arabic, and French.
-
-Detailed methodology and results are available in [`EVALUATION.md`](EVALUATION.md).
-
-## Architecture
-
-```mermaid
-%%{init: {"theme": "base", "themeVariables": {"background": "#ffffff", "primaryColor": "#ffffff", "primaryTextColor": "#111827", "primaryBorderColor": "#111827", "lineColor": "#374151", "secondaryColor": "#ffffff", "tertiaryColor": "#ffffff", "clusterBkg": "#ffffff", "clusterBorder": "#111827"}}}%%
-flowchart TB
-    USER([User]) --> APP[React App] --> API[Express API]
-    API --> INPUT
-
-    subgraph A[Agent A - LangGraph]
-        direction TB
-        INPUT[Input Guard] --> SUP[Supervisor Agent]
-
-        SUP --> OPERATIONS[Operations Agents<br/><br/>SQL Agent<br/>Event Readiness Agent<br/>Event Debrief Agent<br/>Host Event Briefing Agent<br/>Client Event Explorer Agent]
-        SUP --> KNOWLEDGE[Knowledge Agents<br/><br/>RAG Agent<br/>Visual Style Agent<br/>Event Ops Workbook Agent]
-        SUP --> GENERAL[General Agent]
-        SUP --> INVITE[Invitation Site Agent]
-
-        OPERATIONS --> RESULT[Specialist Result]
-        KNOWLEDGE --> RESULT
-        GENERAL --> RESULT
-        INVITE --> RESULT
-        RESULT --> OUTPUT[Output Guard]
-    end
-
-    OUTPUT --> API
-    INVITE --> ADK
-
-    subgraph B[Agent B - Invitation Generator]
-        direction TB
-        ADK[Google ADK Agent] --> SITE[Generate React and Vite Site]
-        SITE --> BUILD[Build and Validate]
-        BUILD --> DEPLOY[Optional Netlify Deployment]
-    end
-
-    classDef box fill:#ffffff,stroke:#111827,color:#111827,stroke-width:1.5px;
-    class USER,APP,API,INPUT,SUP,OPERATIONS,KNOWLEDGE,GENERAL,INVITE,RESULT,OUTPUT,ADK,SITE,BUILD,DEPLOY box;
-    style A fill:#ffffff,stroke:#111827,stroke-width:2px,color:#111827;
-    style B fill:#ffffff,stroke:#111827,stroke-width:2px,color:#111827;
-```
-
-Agent A validates and routes each request to the appropriate specialist. Only the Invitation Site Agent delegates to Agent B, which generates, builds, and optionally deploys the invitation website.
 
 ## Technology Stack
 
